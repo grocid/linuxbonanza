@@ -1,0 +1,172 @@
+/************************************************
+ * ROFI Color theme
+ * User: leofa
+ * Copyright: 2019 grocid
+ ***********************************************/
+
+ configuration {
+    show-icons: true;
+    fixed-num-lines: false;
+    drun-icon-theme: "elementary-add";
+ }
+
+* {
+    selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
+    foreground:                  rgba ( 196, 203, 212, 70 % );
+    fforeground:                 rgba ( 255, 255, 255, 100 % );
+    transparent:                 rgba (   0,   0,   0,   0 % );
+    normal-foreground:           @foreground;
+    alternate-normal-background: @transparent;
+    red:                         rgba ( 220, 50, 47, 100 % );
+    selected-urgent-foreground:  rgba ( 249, 249, 249, 100 % );
+    blue:                        rgba ( 38, 139, 210, 100 % );
+    urgent-foreground:           rgba ( 204, 102, 102, 100 % );
+    alternate-urgent-background: @transparent;
+    active-foreground:           rgba ( 101, 172, 255, 100 % );
+    lightbg:                     rgba ( 238, 232, 213, 100 % );
+    selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
+    alternate-active-background: rgba ( 75, 81, 96, 89 % );
+    //background:                  rgba ( 45, 48, 59, 85 % );
+    background:                  rgba ( 54, 57, 62, 90 % );
+    alternate-normal-foreground: @foreground;
+    normal-background:           @transparent;
+    lightfg:                     rgba ( 88, 104, 117, 100 % );
+    selected-normal-background:  @transparent;
+    border-color:                rgba ( 124, 131, 137, 100 % );
+    spacing:                     7;
+    separatorcolor:              rgba ( 29, 31, 33, 0 % );
+    urgent-background:           rgba ( 29, 31, 33, 17 % );
+    selected-urgent-background:  @transparent;
+    alternate-urgent-foreground: @urgent-foreground;
+    background-color:            @transparent;
+    alternate-active-foreground: @active-foreground;
+    active-background:           @transparent;
+    selected-active-background:  @transparent;
+}
+#window {
+    background-color: @transparent;
+    border:           0;
+    padding:          0;
+    border-radius:    14px;
+    width:            650px;
+    font:             "System San Francisco Display Thin 19";
+    y-offset:         -300;
+}
+#mainbox {
+    background-color: @background;
+    border:  0;
+    padding: 25;
+    border-radius: 1px;
+}
+
+#window mainbox listview element {
+    padding: 40px;
+    border-radius: 10px;
+    dynamic:      true;
+}
+
+#message {
+    border:       0px 0px 0px ;
+    border-color: @transparent;
+    padding:      0px ;
+}
+#textbox {
+    text-color: @foreground;
+}
+#listview {
+    border:       0px 0px 0px ;
+    border-color: @transparent;
+    spacing:      14px ;
+    scrollbar:    false;
+    padding:      0px 0px 0px ;
+    dynamic:      true;
+    columns:      1;
+    lines:        9;
+}
+#element {
+    border:  0;
+    padding: 0px ;
+}
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+#element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+#element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+#element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+#scrollbar {
+    width:        0px ;
+    border:       0;
+    handle-color: @normal-foreground;
+    handle-width: 0px ;
+    padding:      0;
+}
+#sidebar {
+    border:       2px 0px 0px ;
+    border-color: @transparent;
+}
+#button {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+#button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+#inputbar {
+    spacing:    0;
+    text-color: @fforeground;
+    padding:    1px ;
+}
+#case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+#entry {
+    spacing:    0;
+    text-color: @fforeground;
+    font:       "System San Francisco Display 26";
+    expand:     true;
+}
+#prompt {
+    spacing:    0;
+    text-color: @fforeground;
+}
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+#textbox-prompt-colon {
+    expand:     false;
+    str:        "";
+    margin:     0px 0em 0em 0em ;
+    text-color: @fforeground;
+}
