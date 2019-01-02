@@ -1,0 +1,26 @@
+#!/bin/bash
+file=$1
+type=`file $file -b`
+filename="${file%.*}"
+
+if [ -d "$filename" ]; then
+    filename=$filename-$(( ( RANDOM % 1000 )  + 1 ))
+fi
+
+if [[ $type =~ .*Zip* ]]
+then
+    mkdir "$filename"
+    fullpath=$filename
+    unzip $file -d $fullpath
+    exit 0
+fi
+
+if [[ $type =~ .*XZ* ]] || [[ $type =~ .*bzip2* ]] || [[ $type =~ .*gzip* ]]
+then
+    mkdir "$filename"
+    fullpath=$filename
+    tar xfk $file -C $fullpath
+    exit 0
+fi
+
+exit 1
