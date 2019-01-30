@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "" | rofi -dmenu -p "" | xargs -I{} xdg-open https://www.google.se/search?q={}

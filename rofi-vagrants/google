@@ -1,0 +1,3 @@
+#!/bin/bash
+str="$*"
+xdg-open "https://www.google.se/search?q=$str" > /dev/null & 
